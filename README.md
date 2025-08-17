@@ -18,11 +18,60 @@ In5 is a backend service that generates short insights and deep-dive knowledge c
 - **Backend**: FastAPI  
 - **Database**: PostgreSQL (SQLAlchemy ORM)  
 - **AI Model**: Gemini API  
-- **Auth**: JWT (planned)  
+- **Auth**: JWT 
 - **Package Manager**: Poetry  
-- **Deployment**: Docker (optional)  
 
 ---
 
 ## 📂 Project Structure  
+In5/
+│── app/
+│ ├── models/ # SQLAlchemy models (User, Knowledge, Preferences)
+│ ├── schemas/ # Pydantic schemas (request/response validation)
+│ ├── crud/ # DB interaction functions
+│ ├── services/ # Business logic (generate content, save to DB)
+│ ├── routes/ # FastAPI routers/endpoints
+│ ├── db/ # DB connection setup
+│ ├── prompts/ # Prompt templates for Gemini
+│ ├── utils/ # Gemini API client, helpers
+│── main.py # FastAPI app entrypoint
+│── pyproject.toml # Poetry dependencies & project config
+│── README.md # Project documentation
+
+
+
+---
+
+## ⚙️ Setup & Installation  
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/<your-username>/in5-backend.git
+cd in5
+```  
+
+### 2. Install dependencies with Poetry
+```bash
+poetry install
+```
+
+### 3. Activate virtual environment
+```bash
+poetry shell
+```
+
+### 4. Configure environment variables
+
+Create a .env file in the root:
+
+DATABASE_URL=postgresql://user:password@localhost:5432/in5db
+GEMINI_API_KEY=your_gemini_api_key
+JWT_SECRET=your_secret_key   # for auth (future)
+
+### 5. Start the FastAPI server
+```bash
+uvicorn main:app --reload
+```
+
+
 
