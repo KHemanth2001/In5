@@ -24,6 +24,7 @@ In5 is a backend service that generates short insights and deep-dive knowledge c
 ---
 
 ## 📂 Project Structure  
+```
 In5/
 │── app/
 │ ├── models/ # SQLAlchemy models (User, Knowledge, Preferences)
@@ -37,7 +38,7 @@ In5/
 │── main.py # FastAPI app entrypoint
 │── pyproject.toml # Poetry dependencies & project config
 │── README.md # Project documentation
-
+```
 
 
 ---
@@ -46,8 +47,8 @@ In5/
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/<your-username>/in5-backend.git
-cd in5
+git clone https://github.com/KHemanth2001/In5.git
+cd In5
 ```  
 
 ### 2. Install dependencies with Poetry
